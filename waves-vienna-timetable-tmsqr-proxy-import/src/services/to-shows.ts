@@ -5,7 +5,7 @@ export const toShows = (showDay: TmsqrShowDay): Show[] => {
 	return [...showDay.stages]
 		.map((stage) => toShowsInternal(stage))
 		.flat()
-		.sort((a, b) => new Date(a.end).getTime() - new Date(b.start).getTime());
+		.sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
 };
 
 const toShowsInternal = (stage: Stage): Show[] => {
